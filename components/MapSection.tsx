@@ -27,7 +27,7 @@ export default function MapSection({ selectedId, onSelect }: Props) {
         </h2>
         <p className="mt-5 max-w-xl font-body text-ink/70">
           Trykk på et bosted i listen over eller på kartet for å se hvor det
-          ligger i forhold til Maia. 💌 er alltid Maia.
+          ligger i forhold til Maia. 💌-ikonet er bostedet til Maia.
         </p>
 
         <div className="mt-10 flex flex-wrap gap-2">

@@ -78,6 +78,9 @@ export function useVotes() {
     };
   }, [fetchVotes]);
 
+  // Man kan nå stemme på FLERE bosteder samtidig - en stemme per
+  // (bosted + person), ikke én stemme totalt per person.
+  // Se unique index på (accommodation_id, voter_name_normalized) i schema.sql.
   const castVote = useCallback(
     async (accommodationId: string, name: string) => {
       if (!supabase) {
@@ -88,15 +91,13 @@ export function useVotes() {
 
       rememberName(trimmedName);
 
-      // upsert på normalisert navn (lower-case) - se unique index i schema.sql.
-      // Dette gjør at man kan endre stemmen sin ved å stemme på nytt.
       const { error } = await supabase.from("votes").upsert(
         {
           accommodation_id: accommodationId,
           voter_name: trimmedName,
           voter_name_normalized: trimmedName.toLowerCase(),
         },
-        { onConflict: "voter_name_normalized" }
+        { onConflict: "accommodation_id,voter_name_normalized" }
       );
 
       if (error) return { error: error.message };
@@ -107,15 +108,42 @@ export function useVotes() {
     [fetchVotes, rememberName]
   );
 
+  // Fjerner stemmen til (accommodationId + name) - brukes når man trykker
+  // på nytt på et bosted man allerede har stemt på.
+  const removeVote = useCallback(
+    async (accommodationId: string, name: string) => {
+      if (!supabase) {
+        return { error: "Stemmegivning er ikke koblet til enda (mangler Supabase)." };
+      }
+      const trimmedName = name.trim();
+      if (!trimmedName) return { error: "Mangler navn." };
+
+      const { error } = await supabase
+        .from("votes")
+        .delete()
+        .eq("accommodation_id", accommodationId)
+        .eq("voter_name_normalized", trimmedName.toLowerCase());
+
+      if (error) return { error: error.message };
+
+      await fetchVotes();
+      return { error: null };
+    },
+    [fetchVotes]
+  );
+
   const votesFor = useCallback(
     (accommodationId: string) =>
       state.votes.filter((v) => v.accommodation_id === accommodationId),
     [state.votes]
   );
 
-  const myVote = state.votes.find(
-    (v) => voterName && v.voter_name.toLowerCase() === voterName.toLowerCase()
-  );
+  // Alle bostedene denne personen har stemt på (kan nå være flere).
+  const myVotedAccommodationIds = voterName
+    ? state.votes
+        .filter((v) => v.voter_name.toLowerCase() === voterName.toLowerCase())
+        .map((v) => v.accommodation_id)
+    : [];
 
   return {
     votes: state.votes,
@@ -123,7 +151,8 @@ export function useVotes() {
     error: state.error,
     votesFor,
     castVote,
+    removeVote,
     voterName,
-    myVote,
+    myVotedAccommodationIds,
   };
 }

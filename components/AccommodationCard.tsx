@@ -12,7 +12,12 @@ type Props = {
   votes: Vote[];
   maxVotes: number;
   voterName: string | null;
+  hasVotedHere: boolean;
   onVote: (accommodationId: string, name: string) => Promise<{ error: string | null }>;
+  onRemoveVote: (
+    accommodationId: string,
+    name: string
+  ) => Promise<{ error: string | null }>;
   isSelected: boolean;
   onSelect: () => void;
 };
@@ -22,7 +27,9 @@ export default function AccommodationCard({
   votes,
   maxVotes,
   voterName,
+  hasVotedHere,
   onVote,
+  onRemoveVote,
   isSelected,
   onSelect,
 }: Props) {
@@ -30,10 +37,6 @@ export default function AccommodationCard({
   const [nameDraft, setNameDraft] = useState(voterName ?? "");
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
-
-  const hasVotedHere = voterName
-    ? votes.some((v) => v.voter_name.toLowerCase() === voterName.toLowerCase())
-    : false;
 
   const distance = distanceInMeters(
     accommodation.latitude,
@@ -47,15 +50,19 @@ export default function AccommodationCard({
   const namesPreview = votes.slice(0, 3).map((v) => v.voter_name);
   const extraCount = votes.length - namesPreview.length;
 
+  // Man kan nå stemme på flere bosteder. Trykker man på et bosted man
+  // allerede har stemt på, fjernes stemmen igjen (toggle).
   async function handleVoteClick() {
-    if (voterName) {
-      setSubmitting(true);
-      const { error } = await onVote(accommodation.id, voterName);
-      setSubmitting(false);
-      if (error) setError(error);
+    if (!voterName) {
+      setShowNameInput(true);
       return;
     }
-    setShowNameInput(true);
+    setSubmitting(true);
+    const { error } = hasVotedHere
+      ? await onRemoveVote(accommodation.id, voterName)
+      : await onVote(accommodation.id, voterName);
+    setSubmitting(false);
+    if (error) setError(error);
   }
 
   async function handleSubmitName(e: React.FormEvent) {
@@ -82,6 +89,7 @@ export default function AccommodationCard({
           src={accommodation.image}
           alt={accommodation.name}
           fill
+          sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
         {accommodation.rating && (
@@ -115,7 +123,7 @@ export default function AccommodationCard({
           gå
         </p>
 
-        <a
+        
           href={accommodation.bookingUrl}
           target="_blank"
           rel="noopener noreferrer"
@@ -125,7 +133,7 @@ export default function AccommodationCard({
           {accommodation.bookingLabel ?? "Se leiligheten ↗"}
         </a>
 
-        {/* Voting */}
+        {/* Voting - man kan stemme på flere bosteder */}
         <div className="mt-5 border-t border-ink/10 pt-4">
           <div className="mb-2 h-1.5 w-full overflow-hidden rounded-full bg-ink/10">
             <div
@@ -187,6 +195,5 @@ export default function AccommodationCard({
           {error && <p className="mt-2 text-xs text-burgundy">{error}</p>}
         </div>
       </div>
-    </div>
   );
 }

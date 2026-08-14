@@ -11,7 +11,8 @@ type Props = {
 };
 
 export default function Accommodations({ selectedId, onSelect }: Props) {
-  const { votesFor, castVote, voterName, votes } = useVotes();
+  const { votesFor, castVote, removeVote, voterName, votes, myVotedAccommodationIds } =
+    useVotes();
 
   const maxVotes = Math.max(1, ...accommodations.map((a) => votesFor(a.id).length));
 
@@ -23,8 +24,8 @@ export default function Accommodations({ selectedId, onSelect }: Props) {
           Hvor skal vi bo? <span className="not-italic">🏠</span>
         </h2>
         <p className="mt-5 max-w-xl font-body text-ink/70">
-          Se over alternativene og stem på favoritten din. Du kan endre
-          stemmen din senere hvis du ombestemmer deg.
+          Se over alternativene og stem på så mange favoritter du vil. Trykk
+          på nytt for å fjerne stemmen din igjen.
         </p>
 
         {!isSupabaseConfigured && (
@@ -42,7 +43,9 @@ export default function Accommodations({ selectedId, onSelect }: Props) {
               votes={votesFor(acc.id)}
               maxVotes={maxVotes}
               voterName={voterName}
+              hasVotedHere={myVotedAccommodationIds.includes(acc.id)}
               onVote={castVote}
+              onRemoveVote={removeVote}
               isSelected={selectedId === acc.id}
               onSelect={() => onSelect(acc.id)}
             />
