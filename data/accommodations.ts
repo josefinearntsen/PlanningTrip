@@ -25,6 +25,24 @@ export type Accommodation = {
 
 export const accommodations: Accommodation[] = [
   {
+    id: "airbnb-1413815701267700886",
+    name: "Luksuriøs takleilighet, Frederiksbjerg",
+    area: "Frederiksbjerg",
+    address: "Frederiksbjerg, 8000 Aarhus C, Danmark", // Airbnb skjuler eksakt adresse pre-booking
+    latitude: 56.148937161723765, // anslag for Frederiksbjerg nær togstasjonen - se note i data/maia.ts for hvordan finne eksakt adresse
+    longitude: 10.197576142329112,
+    pricePerPersonNOK: 1962, // 15 694 kr totalt (3 netter) / 8 gjester
+    totalPriceNOK: 15694,
+    guests: 8,
+    rating: 4.88,
+    description:
+      "Toppleilighet med Aarhus' beste utsikt og balkong i solnedgangen, midt på Frederiksbjerg. Fem minutter til togstasjonen, kafeer og restauranter rett over gaten.",
+    bookingUrl:
+      "https://www.airbnb.no/rooms/1413815701267700886?adults=7&check_in=2026-09-24&check_out=2026-09-27&guests=8&location=Aarhus%2C%20Sentral-Danmark%2C%20Danmark&search_mode=regular_search",
+    bookingLabel: "Se på Airbnb ↗",
+    image: "https://picsum.photos/seed/aarhus-airbnb-1/800/600", // TODO: bytt ut med bilde fra annonsen eller egen fil i /public/images/accommodations/
+  },
+  {
     id: "latinerkvarteret-loft",
     name: "Loftsleilighet i Latinerkvarteret",
     area: "Latinerkvarteret",
