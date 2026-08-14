@@ -73,7 +73,7 @@ export const accommodations: Accommodation[] = [
     rating: undefined, // Airbnb viser ikke snittvurdering før 3 anmeldelser (kun 1 anmeldelse så langt)
     description:
       "Stort familierom på Danhostel Aarhus City med plass til 8 (dobbeltseng + 3 køyesenger) og eget bad. Sentralt i Aarhus C, rett ved Århusåen og gangavstand til Latinerkvarteret, ARoS og Dokk1. Tilgang til delt gjestekjøkken og fellesarealer.",
-    bookingUrl: "TODO: lim inn Airbnb-lenken til dette rommet her",
+    bookingUrl: "https://www.airbnb.no/rooms/1672335846526267565?adults=6&check_in=2026-09-24&check_out=2026-09-27&guests=8&location=Aarhus%2C%20Sentral-Danmark%2C%20Danmark&search_mode=regular_search&category_tag=Tag%3A8678&photo_id=2608082697&source_impression_id=p3_1786736314_P3JliKhcJ-h5y-mK&previous_page_section_name=1001&federated_search_id=6a55c99b-e8df-4563-ac69-491e23630559",
     bookingLabel: "Se på Airbnb ↗",
     image: "/images/accommodations/sovesal-1.png", // TODO: bytt ut med bilde fra annonsen eller egen fil i /public/images/accommodations/
   },
