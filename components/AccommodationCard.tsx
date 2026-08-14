@@ -124,7 +124,7 @@ export default function AccommodationCard({
         </p>
 
         
-          href={accommodation.bookingUrl}
+          <a href={accommodation.bookingUrl}
           target="_blank"
           rel="noopener noreferrer"
           onClick={(e) => e.stopPropagation()}
@@ -195,5 +195,6 @@ export default function AccommodationCard({
           {error && <p className="mt-2 text-xs text-burgundy">{error}</p>}
         </div>
       </div>
+    </div>
   );
 }
