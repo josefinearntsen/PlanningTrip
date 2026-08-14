@@ -9,7 +9,6 @@ export const maiaLocation = {
   address: "Frederiks Allé 83, 8000 Aarhus C, Danmark",
   latitude: 56.148622824934016,
   longitude: 10.197322668740616,
-  // 🖼️ BYTT UT: legg bildet av Maia i /public/images/maia/maia.jpg
   images: [
   "/images/maia/maia-1.png",
   "/images/maia/maia-2.png",
