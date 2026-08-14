@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Fraunces, Inter, Caveat } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -38,6 +39,7 @@ export default function RootLayout({
   return (
     <html lang="no">
       <body
+      <Analytics />
         className={`${fraunces.variable} ${inter.variable} ${caveat.variable} bg-cream font-body text-ink antialiased`}
       >
         {children}

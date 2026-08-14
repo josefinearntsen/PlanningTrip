@@ -111,7 +111,6 @@ export const trainInfo = {
 
 // 🚌 Direktebuss fra Billund til Aarhus
 // Flere selskaper kjører denne strekningen (bl.a. Flixbus og Kombardo Expressbus).
-// Bytt gjerne ut med den lenken/det selskapet dere faktisk bestiller hos.
 export const busInfo = {
   label: "Direktebuss Billund Lufthavn → Aarhus",
   url: "https://www.midttrafik.dk/media/443dzpqm/912x_k26-ua.pdf",
