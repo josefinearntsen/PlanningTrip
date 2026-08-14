@@ -15,10 +15,10 @@ export default function Flights() {
           Komme oss til Aarhus <span className="not-italic">✈️</span>
         </h2>
         <p className="mt-5 max-w-xl font-body text-ink/70">
-          Vi reiser fra forskjellige byer i Norge. Velg din by under for
-          direktelenker til flyselskaper og flysøk. Aarhus Lufthavn har koden{" "}
+          Vi reise fra forskjellige bya i Norge. Velg din by under for
+          direktelenker til flyselskapa og flysøk. Aarhus Lufthavn har koden{" "}
           <strong className="text-burgundy">AAR</strong> — men det kan også
-          lønne seg å fly til København (<strong className="text-burgundy">CPH</strong>) og ta
+          lønne sæ å fly til København (<strong className="text-burgundy">CPH</strong>) og ta
           toget videre, eller til Billund (<strong className="text-burgundy">BLL</strong>) og ta
           direktebuss videre.
         </p>

@@ -10,5 +10,10 @@ export const maiaLocation = {
   latitude: 56.148,
   longitude: 10.201,
   // 🖼️ BYTT UT: legg bildet av Maia i /public/images/maia/maia.jpg
-  image: "/images/maia/maia.jpg",
+  images: [
+  "/images/maia/maia-1.png",
+  "/images/maia/maia-2.png",
+  "/images/maia/maia-3.png",
+  "/images/maia/maia-4.png",
+],
 };

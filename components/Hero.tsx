@@ -12,7 +12,7 @@ export default function Hero() {
       {/* 🖼️ BYTT UT: hovedbildet av Aarhus. Legg gjerne et stort landskapsbilde
           i /public/images/hero.jpg og bytt ut src under. */}
       <Image
-        src="https://picsum.photos/seed/aarhus-hero/1600/2000"
+        src="/images/article-denmark-aarhus-aros-rainbow-panorama.jpg"
         alt="Aarhus by night"
         fill
         priority
@@ -28,7 +28,6 @@ export default function Hero() {
           transition={{ duration: 0.7 }}
           className="font-hand text-2xl text-dustypink sm:text-3xl"
         >
-          Vi kommer til Maia 💌
         </motion.p>
 
         <motion.h1
@@ -37,9 +36,9 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.15 }}
           className="mt-2 font-display text-[16vw] leading-[0.9] text-cream sm:text-[9vw] lg:text-[7.5rem]"
         >
-          Girls trip
+          Surfetten
           <br />
-          <span className="italic text-dustypink">to Aarhus</span>
+          <span className="italic text-dustypink">til Aarhus</span>
           <span className="ml-3 not-italic">🇩🇰</span>
         </motion.h1>
 
@@ -52,9 +51,9 @@ export default function Hero() {
           <span className="rounded-full border border-cream/30 px-5 py-2 font-body text-sm uppercase tracking-[0.2em] text-cream sm:text-base">
             24.–27. september 2026
           </span>
-          <span className="font-body text-sm text-cream/70">
+          {/* <span className="font-body text-sm text-cream/70">
             10 jenter · én venninne på utveksling · fire dager i Danmark
-          </span>
+          </span> */}
         </motion.div>
       </div>
 
