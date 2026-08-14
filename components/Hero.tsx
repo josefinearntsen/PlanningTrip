@@ -36,7 +36,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.15 }}
           className="mt-2 font-display text-[16vw] leading-[0.9] text-cream sm:text-[9vw] lg:text-[7.5rem]"
         >
-          Surfetten
+          Surfette
           <br />
           <span className="italic text-dustypink">til Aarhus</span>
           <span className="ml-3 not-italic">🇩🇰</span>

@@ -40,72 +40,58 @@ export const accommodations: Accommodation[] = [
     bookingUrl:
       "https://www.airbnb.no/rooms/1413815701267700886?adults=7&check_in=2026-09-24&check_out=2026-09-27&guests=8&location=Aarhus%2C%20Sentral-Danmark%2C%20Danmark&search_mode=regular_search",
     bookingLabel: "Se på Airbnb ↗",
-    image: "https://picsum.photos/seed/aarhus-airbnb-1/800/600", // TODO: bytt ut med bilde fra annonsen eller egen fil i /public/images/accommodations/
+    image: "/images/accommodations/airbnb-1.png", // TODO: bytt ut med bilde fra annonsen eller egen fil i /public/images/accommodations/
   },
   {
-    id: "latinerkvarteret-loft",
-    name: "Loftsleilighet i Latinerkvarteret",
-    area: "Latinerkvarteret",
-    address: "Møllestien, 8000 Aarhus C, Danmark",
-    latitude: 56.1567,
-    longitude: 10.2076,
-    pricePerPersonNOK: 1150,
-    totalPriceNOK: 11500,
-    guests: 10,
-    rating: 4.8,
-    description:
-      "Sjarmerende loft midt i de brosteinsbelagte gatene, gåavstand til nesten alt.",
-    bookingUrl: "https://www.airbnb.com/",
-    bookingLabel: "Se leiligheten ↗",
-    image: "https://picsum.photos/seed/aarhus-latin/800/600",
-  },
-  {
-    id: "aarhus-c-penthouse",
-    name: "Penthouse i Aarhus C",
+    id: "airbnb-byhus-aarhus-c",
+    name: "Lekkert 200 m² byhus i Aarhus C, 4 soverom",
     area: "Aarhus C",
-    address: "Åboulevarden, 8000 Aarhus C, Danmark",
-    latitude: 56.1546,
-    longitude: 10.2098,
-    pricePerPersonNOK: 1400,
-    totalPriceNOK: 14000,
-    guests: 10,
-    rating: 4.9,
-    description: "Lys og luftig leilighet ved åen, med takterrasse og utsikt.",
-    bookingUrl: "https://www.booking.com/",
-    bookingLabel: "Se leiligheten ↗",
-    image: "https://picsum.photos/seed/aarhus-penthouse/800/600",
-  },
-  {
-    id: "frederiksbjerg-townhouse",
-    name: "Rekkehus på Frederiksbjerg",
-    area: "Frederiksbjerg",
-    address: "Frederiks Allé, 8000 Aarhus C, Danmark",
-    latitude: 56.149,
-    longitude: 10.2015,
-    pricePerPersonNOK: 980,
-    totalPriceNOK: 9800,
-    guests: 10,
-    rating: 4.6,
+    address: "Aarhus C, 8000 Aarhus, Danmark", // Airbnb skjuler eksakt adresse pre-booking
+    latitude: 56.147324752186705,
+    longitude: 10.193934924656041,
+    pricePerPersonNOK: 2367, // 18 937 kr totalt (3 netter) / 8 gjester
+    totalPriceNOK: 18937,
+    guests: 8,
+    rating: 4.93,
     description:
-      "Koselig rekkehus rett rundt hjørnet fra Maia, med hage og god plass.",
-    bookingUrl: "https://www.airbnb.com/",
-    bookingLabel: "Se leiligheten ↗",
-    image: "https://picsum.photos/seed/aarhus-frederiksbjerg/800/600",
+      "Romslig 200 kvm byhus med 4 soverom, 2 bad og privat hage med grill, midt i Aarhus C. Gangavstand til ARoS, rådhuset, Bruuns Galleri, Den Gamle By og Dokk1.",
+    bookingUrl:
+      "https://www.airbnb.no/rooms/1383439144478344107?adults=8&check_in=2026-09-24&check_out=2026-09-27&guests=8&location=Aarhus%2C%20Sentral-Danmark%2C%20Danmark&search_mode=regular_search&source_impression_id=p3_1786727394_P3H4bMzhY4gWy5r_&previous_page_section_name=1001&federated_search_id=487abdc5-66c9-4873-952f-811955e1a68f",
+    bookingLabel: "Se på Airbnb ↗",
+    image: "/images/accommodations/airbnb-2.png", // TODO: bytt ut med bilde fra annonsen eller egen fil i /public/images/accommodations/
   },
   {
-    id: "havnen-apartment",
-    name: "Leilighet ved Havnen",
-    area: "Aarhus Ø / Havnen",
-    address: "Dokk1-området, 8000 Aarhus, Danmark",
-    latitude: 56.1495,
-    longitude: 10.2185,
-    pricePerPersonNOK: 1250,
-    totalPriceNOK: 12500,
-    guests: 10,
-    rating: 4.7,
-    description: "Moderne leilighet med havneutsikt, kort vei til Dokk1 og sentrum.",
-    bookingUrl: "https://www.booking.com/",
-    bookingLabel: "Se leiligheten ↗",
-    image: "https://picsum.photos/seed/aarhus-havn/800/600",
+    id: "airbnb-danhostel-family-room",
+    name: "Privat rom for åtte personer med eget bad",
+    area: "Aarhus C",
+    address: "Aarhus C, 8000 Aarhus, Danmark", // Airbnb skjuler eksakt adresse pre-booking - Danhostel Aarhus City, nær Århusåen/Vadestedet
+    latitude: 56.15702106502432,
+    longitude: 10.20730529878372,
+    pricePerPersonNOK: 842, // 6 733 kr totalt (3 netter) / 8 gjester
+    totalPriceNOK: 6733,
+    guests: 8,
+    rating: undefined, // Airbnb viser ikke snittvurdering før 3 anmeldelser (kun 1 anmeldelse så langt)
+    description:
+      "Stort familierom på Danhostel Aarhus City med plass til 8 (dobbeltseng + 3 køyesenger) og eget bad. Sentralt i Aarhus C, rett ved Århusåen og gangavstand til Latinerkvarteret, ARoS og Dokk1. Tilgang til delt gjestekjøkken og fellesarealer.",
+    bookingUrl: "TODO: lim inn Airbnb-lenken til dette rommet her",
+    bookingLabel: "Se på Airbnb ↗",
+    image: "/images/accommodations/sovesal-1.png", // TODO: bytt ut med bilde fra annonsen eller egen fil i /public/images/accommodations/
+  },
+  {
+    id: "airbnb-sjarmerende-byhus",
+    name: "Sjarmerende byhus midt i sentrum",
+    area: "Frederiksbjerg",
+    address: "Frederiksbjerg, 8000 Aarhus C, Danmark", // Airbnb skjuler eksakt adresse pre-booking - nær Jægergårdsgade
+    latitude: 56.14655190520858,
+    longitude: 10.196898999820787,
+    pricePerPersonNOK: 2258, // 13 548 kr totalt (3 netter) / 6 gjester
+    totalPriceNOK: 13548,
+    guests: 6, // OBS: lavere kapasitet enn de andre alternativene
+    rating: 4.76,
+    description:
+      "Koselig rekkehus med hage, terrasse og drivhus, midt på Frederiksbjerg rett ved Jægergårdsgade sine kafeer og restauranter. Kort gangavstand til Aros og Strøget.",
+    bookingUrl: "https://www.airbnb.no/rooms/44135404?adults=6&check_in=2026-09-24&check_out=2026-09-27&guests=8&location=Aarhus%2C%20Sentral-Danmark%2C%20Danmark&search_mode=regular_search&source_impression_id=p3_1786729320_P33pYOZ4CRiDWLmo&previous_page_section_name=1001&federated_search_id=f75e693a-e505-45b4-b40e-224fba010817",
+    bookingLabel: "Se på Airbnb ↗",
+    image: "/images/accommodations/airbnb-3.png", 
   },
 ];

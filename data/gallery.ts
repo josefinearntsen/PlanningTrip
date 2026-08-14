@@ -10,33 +10,28 @@ export type GalleryImage = {
 
 export const galleryImages: GalleryImage[] = [
   {
-    src: "https://picsum.photos/seed/aros-rainbow/800/1000",
+    src: "/images/gallery/360_F_345596607_4rOKBXbbXoHgvxA262CAxOAyhJqs1R6v.jpg",
     alt: "ARoS Rainbow Panorama",
     span: "tall",
   },
   {
-    src: "https://picsum.photos/seed/latinerkvarteret/900/650",
+    src: "/images/gallery/Isbjerget-Aarhus-Architecture.jpg",
     alt: "Latinerkvarteret",
     span: "wide",
   },
   {
-    src: "https://picsum.photos/seed/aarhus-sentrum/700/700",
+    src: "/images/gallery/standard_compressed_danmarkfriluftsmuseet.jpg",
     alt: "Aarhus sentrum",
     span: "normal",
   },
   {
-    src: "https://picsum.photos/seed/aarhus-havn/700/900",
+    src: "/images/gallery/Aarhus_picture-scaled.jpg",
     alt: "Havnen i Aarhus",
     span: "tall",
   },
   {
-    src: "https://picsum.photos/seed/dansk-gate/900/650",
+    src: "/images/gallery/Aarhus-Denmark.jpg",
     alt: "Danske gater",
     span: "wide",
-  },
-  {
-    src: "https://picsum.photos/seed/cafe-aarhus/700/700",
-    alt: "Café i Aarhus",
-    span: "normal",
   },
 ];
