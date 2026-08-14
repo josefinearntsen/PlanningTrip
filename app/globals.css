@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background-color: #faf3ea;
+  background-image: radial-gradient(
+      circle at 20% 10%,
+      rgba(110, 31, 43, 0.05),
+      transparent 40%
+    ),
+    radial-gradient(circle at 85% 30%, rgba(159, 184, 201, 0.08), transparent 45%);
+}
+
+::selection {
+  background-color: #6e1f2b;
+  color: #faf3ea;
+}
+
+/* Signature scrapbook element: the polaroid frame used for Maia + gallery photos */
+.polaroid {
+  background: #fffdf9;
+  padding: 0.75rem 0.75rem 2.25rem 0.75rem;
+  box-shadow: 0 6px 18px rgba(42, 30, 30, 0.18), 0 2px 4px rgba(42, 30, 30, 0.1);
+  position: relative;
+}
+
+.washi-tape {
+  position: absolute;
+  height: 1.75rem;
+  width: 5rem;
+  background: rgba(231, 199, 195, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* Leaflet needs explicit sizing + we retheme its default chrome a touch */
+.leaflet-container {
+  font-family: var(--font-inter), sans-serif;
+  background: #f1e7d8;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 4px;
+  box-shadow: 0 10px 30px -12px rgba(42, 30, 30, 0.35);
+}
+
+.leaflet-popup-tip {
+  box-shadow: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
