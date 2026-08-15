@@ -21,10 +21,10 @@ export default function Accommodations({ selectedId, onSelect }: Props) {
       <div className="mx-auto max-w-6xl sm:px-8">
         <p className="font-hand text-2xl text-burgundy sm:text-3xl">Avstemning</p>
         <h2 className="mt-2 font-display text-4xl text-ink sm:text-5xl">
-          Hvor skal vi bo? <span className="not-italic">🏠</span>
+          Kor skal vi bo? <span className="not-italic">🏠</span>
         </h2>
         <p className="mt-5 max-w-xl font-body text-ink/70">
-          Se over alternativene og stem på så mange favoritter du vil. Trykk
+          Se over alternativan og stem på så mange favoritta du vil. Trykk
           på nytt for å fjerne stemmen din igjen.
         </p>
 

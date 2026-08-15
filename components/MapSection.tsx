@@ -23,11 +23,11 @@ export default function MapSection({ selectedId, onSelect }: Props) {
       <div className="mx-auto max-w-6xl sm:px-8">
         <p className="font-hand text-2xl text-burgundy sm:text-3xl">Geografien</p>
         <h2 className="mt-2 font-display text-4xl text-ink sm:text-5xl">
-          Hvor bor Maia? 📍
+          Kor bor Maia? 📍
         </h2>
         <p className="mt-5 max-w-xl font-body text-ink/70">
-          Trykk på et bosted i listen over eller på kartet for å se hvor det
-          ligger i forhold til Maia. 💌-ikonet er bostedet til Maia.
+          Trykk på et bosted i lista over eller på kartet for å se kor det
+          ligg i forhold til Maia. 💌-ikonet e bostedet til Maia.
         </p>
 
         <div className="mt-10 flex flex-wrap gap-2">
