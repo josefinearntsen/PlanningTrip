@@ -39,10 +39,10 @@ export default function RootLayout({
   return (
     <html lang="no">
       <body
-      <Analytics />
         className={`${fraunces.variable} ${inter.variable} ${caveat.variable} bg-cream font-body text-ink antialiased`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
